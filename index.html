@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Rosales | Software Architect</title>
+    <!-- Fuente moderna monoespaciada para un look más limpio -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">[</span>DR<span class="logo-bracket">]</span>
+            </a>
+
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home" data-key="navHome">Home</a></li>
+                <li><a href="#about" data-key="navAbout">About</a></li>
+                <li><a href="#stack" data-key="navStack">Stack</a></li>
+                <li><a href="#contact" data-key="navContact">Contact</a></li>
+                <li class="lang-separator">|</li>
+                <li class="nav-lang-switch" onclick="toggleLanguage()">
+                    <span id="lang-en" class="lang-opt active">EN</span>
+                    <span>/</span>
+                    <span id="lang-es" class="lang-opt">ES</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="visible">
+        <div class="container" style="text-align: center;">
+            <p class="subtitle" data-key="heroSub">System Online</p>
+
+            <!-- Terminal Effect Wrapper -->
+            <div class="terminal-line">
+                <span class="bash-prompt">root@system:~$</span>
+                <!-- H1 está vacío al inicio para el efecto de escritura -->
+                <h1 id="hero-title" data-key="heroTitle" data-text=""></h1>
+                <span class="cursor">_</span>
+            </div>
+
+            <p data-key="heroDesc">Software Engineer. Architect. Builder.</p>
+            <a href="#about" class="btn" data-key="btnExplore">Explore System</a>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="glass-panel">
+                <h2 data-key="aboutTitle">User Profile</h2>
+                <p data-key="aboutText1">
+                    Graduate of <strong>UNLP</strong> and currently pursuing a <strong>Master's in Big Data</strong>.
+                    Besides writing code, I design modular architectures, scalable systems, and data-driven
+                    applications.
+                </p>
+                <p data-key="aboutText2">
+                    I enjoy connecting solid backend design with clean and modern web experiences. I have
+                    experience in diverse web projects working on my own and also along side other fellow developers.
+                </p>
+                <p data-key="aboutText3">
+                    Dedicated to knowledge sharing as a <strong>Computer Science Educator</strong> (Python, Java). Also
+                    experienced in AI, training models via <strong>RLHF</strong>.
+                </p>
+
+                <div class="credentials">
+                    <div class="badge">UNLP Graduate</div>
+                    <div class="badge">Big Data Master's</div>
+                    <div class="badge">AI & RLHF</div>
+                    <div class="badge">CS Educator</div>
+                    <div class="badge">AWS Certified Architect</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STACK SECTION -->
+    <section id="stack">
+        <div class="container">
+            <h2 data-key="stackTitle">Tech Arsenal</h2>
+            <div class="glass-panel">
+                <div class="tech-grid">
+                    <a href="https://docs.oracle.com/en/java/" target="_blank" class="tech-item"><span>Java</span></a>
+                    <a href="https://docs.python.org/3/" target="_blank" class="tech-item"><span>Python</span></a>
+                    <a href="https://spring.io/projects/spring-boot" target="_blank" class="tech-item"><span>Spring
+                            Boot</span></a>
+                    <a href="https://docs.aws.amazon.com/" target="_blank" class="tech-item"><span>AWS</span></a>
+                    <a href="https://docs.djangoproject.com/" target="_blank" class="tech-item"><span>Django</span></a>
+                    <a href="https://www.typescriptlang.org/docs/" target="_blank"
+                        class="tech-item"><span>TypeScript</span></a>
+                    <a href="https://vuejs.org/guide/introduction.html" target="_blank"
+                        class="tech-item"><span>Vue.js</span></a>
+                    <a href="https://angular.dev/" target="_blank" class="tech-item"><span>Angular</span></a>
+                    <a href="https://www.gnu.org/software/bash/manual/" target="_blank" class="tech-item"><span>Shell
+                            Script</span></a>
+                    <a href="https://www.postgresql.org/docs/" target="_blank" class="tech-item"><span>SQL</span></a>
+                    <a href="https://git-scm.com/doc" target="_blank" class="tech-item"><span>Git</span></a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
+                        class="tech-item"><span>HTML</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container" style="text-align: center;">
+            <div class="glass-panel" style="display: inline-block; width: 100%; max-width: 900px;">
+                <h2 data-key="contactTitle" style="justify-content: center;">Initialize Protocol</h2>
+                <p data-key="contactDesc">Ready to build the future? Check my source code.</p>
+
+                <div class="btn-group">
+                    <a href="https://github.com/Rosales-Diego?tab=repositories" target="_blank" class="btn"
+                        data-key="btnGithub">
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/diego-rosales-75b023253/" target="_blank" class="btn"
+                        data-key="btnLinkedin">
+                        LinkedIn
+                    </a>
+                    <a href="mailto:dierosales07@gmail.com" class="btn" data-key="btnEmail">
+                        Email
+                    </a>
+                    <a href="assets/pdf/Diego_Rosales_CV_EN.pdf" class="btn" id="btn-cv" target="_blank"
+                        data-key="btnCV">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+        <footer>© 2026 Diego Rosales. All systems operational.</footer>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
