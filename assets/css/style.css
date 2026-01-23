@@ -46,7 +46,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 0.85rem 2rem;
     z-index: 1000;
     transition: all 0.3s ease;
     background: rgba(5, 5, 5, 0.8);
@@ -65,23 +65,24 @@ body {
 
 /* Logo Styles */
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-white);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    letter-spacing: 2px;
-    font-family: var(--font-main);
     z-index: 1001;
 }
 
-.logo-bracket {
-    color: var(--matrix-green);
-    margin: 0 2px;
+.nav-logo-img {
+    height: 48px;
+    width: auto;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.logo:hover .logo-bracket {
-    text-shadow: 0 0 10px var(--matrix-green);
+.logo:hover .nav-logo-img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 6px var(--matrix-green));
 }
+
+
 
 /* Nav Links */
 .nav-links {
