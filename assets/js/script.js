@@ -247,3 +247,28 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// --- 6. LOGO INTERACTION (TOUCH/CLICK OVERRIDE) ---
+const logoLink = document.querySelector('.logo');
+const logoImg = document.querySelector('.nav-logo-img');
+
+if (logoLink && logoImg) {
+    logoLink.addEventListener('click', (e) => {
+        const isHovering = logoLink.matches(':hover');
+        const currentState = logoImg.getAttribute('data-state');
+
+        // Determine if currently visually "big"
+        // It is big if: Explicitly Expanded OR (Hovering AND Not Explicitly Collapsed)
+        const isCurrentlyBig = currentState === 'expanded' || (isHovering && currentState !== 'collapsed');
+
+        // Toggle state
+        const newState = isCurrentlyBig ? 'collapsed' : 'expanded';
+        logoImg.setAttribute('data-state', newState);
+    });
+
+    // Reset state on mouse leave so hover works again next time
+    logoLink.addEventListener('mouseleave', () => {
+        logoImg.removeAttribute('data-state');
+    });
+}
+
