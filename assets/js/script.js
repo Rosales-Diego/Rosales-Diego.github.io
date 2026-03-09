@@ -172,6 +172,7 @@ let currentLang = 'en';
 
 function toggleLanguage() {
     currentLang = currentLang === 'es' ? 'en' : 'es';
+    document.documentElement.lang = currentLang;
 
     document.querySelectorAll('[data-key]').forEach(elem => {
         const key = elem.getAttribute('data-key');
@@ -211,6 +212,8 @@ const navLinksItems = document.querySelectorAll('.nav-links a');
 
 // Toggle Mobile Menu
 mobileBtn.addEventListener('click', () => {
+    const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+    mobileBtn.setAttribute('aria-expanded', !isExpanded);
     mobileBtn.classList.toggle('active');
     navLinks.classList.toggle('active');
 });
@@ -218,6 +221,7 @@ mobileBtn.addEventListener('click', () => {
 // Close Mobile Menu when clicking a link
 navLinksItems.forEach(link => {
     link.addEventListener('click', () => {
+        mobileBtn.setAttribute('aria-expanded', 'false');
         mobileBtn.classList.remove('active');
         navLinks.classList.remove('active');
     });
